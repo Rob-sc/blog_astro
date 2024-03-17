@@ -1,5 +1,7 @@
 ---
 
+import '../styles/gobal.css'
+
 const pageTitle = "Sobre mi";
 
 const identity = {
@@ -14,6 +16,11 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Redacción de do
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
+
 ---
 
 <html lang="es">
@@ -21,6 +28,17 @@ const goal = 3;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+        h1 {
+          color: purple;
+          font-size: 4rem;
+        }
+        .skill {
+          color: var(--skillColor);
+          font-weight: var(--fontWeight);
+          text-transform: var(--textCase);
+        }
+      </style>
   </head>
   <body>
     <a href="/">Inicio</a>
@@ -39,5 +57,10 @@ const goal = 3;
 
     {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
 
+
+    <p>Mis habilidades son:</p>
+        <ul>
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
 </body>
 </html>
