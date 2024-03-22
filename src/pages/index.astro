@@ -1,25 +1,9 @@
 ---
-
-import '../styles/gobal.css'
-
-const pageTitle = "Inicio";
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting';
+const pageTitle = "Página de inicio";
 ---
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <a href="/">Inicio</a>
-    <a href="/about/">Sobre mi</a>
-    <a href="/blog/">Blog</a>
-    <h1>{pageTitle}</h1>
-	</head>
-	<body>
-
-		<h1>Mi sitio Astro</h1>
-
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>El impresionante subtítulo de mi blog</h2>
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+</BaseLayout>
