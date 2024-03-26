@@ -1,5 +1,5 @@
 html {
-  background-color: #d3d0d4;
+  background-color: #F7F8F9;
   font-family: sans-serif;
 }
 
@@ -7,7 +7,7 @@ body {
   margin: 0 auto;
   width: 100%;
   max-width: 80ch;
-  padding: 1rem;
+
   line-height: 1.5;
 }
 
@@ -63,22 +63,44 @@ h1 {
   display: unset;
 }
 
+#themeToggle{
+  margin-top: 5px;
+  position: absolute;
+  right: 1.5rem;
+}
+
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 5em;
+    padding-left: 5em;
     display: block;
     position: static;
-    width: auto;
+    width: 100%;
     background: none;
+    border-bottom: 1px solid black;
   }
 
   .nav-links a {
     display: inline-block;
-    padding: 15px 20px;
+    padding: 15px;
   }
 
   .hamburger {
     display: none;
   }
 
+  #themeToggle{
+    margin-top: 5px;
+    position: absolute;
+    right: 1.5rem;
+  }
+
+}
+
+html.dark {
+  background-color: #121212;
+  color: #F7F8F9;
+}
+
+.dark .nav-links a {
+  color: #fff;
 }
